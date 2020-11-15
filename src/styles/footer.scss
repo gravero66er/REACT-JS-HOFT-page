@@ -1,0 +1,31 @@
+.footer {
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  ;
+  &__logo {
+    width: 104px;
+    height: 87px;
+    margin-bottom: 30px;
+    background: url(../img/logo_a.webp) center/cover no-repeat;
+  }
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+    .icon__item svg {
+      width: 20px;
+      height: 30px;
+      fill: #1463aa;
+      transition-duration: 0.3s;
+    }
+
+    .icon__item svg:hover {
+      transform: translateY(-5px);
+      cursor: pointer;
+    }
+  }
+}
