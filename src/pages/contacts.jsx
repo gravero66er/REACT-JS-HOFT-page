@@ -25,7 +25,9 @@ export default function Contacts() {
           <button className="about__button">Заказать звонок</button>
         </a>
       </div>
-      <YMap />
+      <div className="contacts__content">
+        <YMap />
+      </div>
     </div>
   );
 }
