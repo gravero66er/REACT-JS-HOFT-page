@@ -12,6 +12,7 @@ function App() {
       <Header />
       <BurgerMenu />
       <About />
+      <Advantages />
       <Partners />
       <Footer />
 

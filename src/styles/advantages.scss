@@ -6,7 +6,7 @@
   &__list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 40px 10px;
+    grid-gap: 20px 10px;
     @media (max-width: 861px) {
         grid-template-columns: 1fr 1fr;
     }
@@ -41,12 +41,11 @@
     }
     .item__title {
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 7px;
       font-family: "Open Sans", sans-serif;
       font-style: normal;
       font-weight: normal;
-      font-size: 24px;
-      line-height: 41px;
+      font-size: 18px;
       text-align: center;
 
       color: #4086ba;
@@ -58,8 +57,8 @@
       font-family: "Open Sans", sans-serif;
       font-style: normal;
       font-weight: normal;
-      font-size: 18px;
-      line-height: 23px;
+      font-size: 16px;
+      line-height: 20px;
       text-align: center;
       color: #9d9c9c;
     }
