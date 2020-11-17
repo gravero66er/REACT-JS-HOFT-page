@@ -1,5 +1,10 @@
 import React from "react";
+import About from "../../pages/about";
+import Advantages from "../../pages/advantages";
+import Contacts from "../../pages/contacts";
+import Partners from "../../pages/partners";
 import styled from "styled-components";
+import { NavLink, Switch, Route } from "react-router-dom";
 
 const MenuBox = styled.div`
   @media (max-width: 861px) {
@@ -7,27 +12,41 @@ const MenuBox = styled.div`
     padding: ${({ open }) => (open ? "10px" : "5")};
 
     a {
-      transform: ${({open}) => open ? 'translateX(0)' : 'translateX(-500px)'};
-      opacity: ${({open}) => open ? 1 : 0};
+      transform: ${({ open }) =>
+        open ? "translateX(0)" : "translateX(-500px)"};
+      opacity: ${({ open }) => (open ? 1 : 0)};
     }
   }
 `;
 
 export default function Menu({ open }) {
   return (
-    <MenuBox className="menu" open={open}>
-      <a href="" className="menu__item">
-        HOFT
-      </a>
-      <a href="" className="menu__item">
-        ПРИЕМУЩЕСТВА
-      </a>
-      <a href="" className="menu__item">
-        ПАРТНЕРЫ
-      </a>
-      <a href="" className="menu__item">
-        КОНТАКТЫ
-      </a>
-    </MenuBox>
+    <div>
+      <MenuBox className="menu" open={open}>
+        <NavLink exact to="/" className="menu__item">
+          HOFT
+        </NavLink>
+        <NavLink exact to="/advantages" className="menu__item">
+          ПРИЕМУЩЕСТВА
+        </NavLink>
+        <NavLink exact to="/partners" className="menu__item">
+          ПАРТНЕРЫ
+        </NavLink>
+        <NavLink exact to="/contacts" className="menu__item">
+          КОНТАКТЫ
+        </NavLink>
+      </MenuBox>
+      <Switch>
+        <Route key={"/"} exact path="/" component={About} />
+        <Route
+          key={"/advantages"}
+          exact
+          path="/advantages"
+          component={Advantages}
+        />
+        <Route key={"/partner"} exact path="/partners" component={Partners} />
+        <Route key={"/contacts"} exact path="/contacts" component={Contacts} />
+      </Switch>
+    </div>
   );
 }

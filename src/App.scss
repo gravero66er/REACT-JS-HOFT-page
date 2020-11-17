@@ -1,21 +1,6 @@
-body {
-  min-width: 320px;
-}
-
-.wrapper {
-  width: 1200px;
-  margin: 0 auto;
-  background-color: #ffffff;
-  overflow: hidden;
-  -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.2);
-  @media (max-width: 1200px) {
-      width: 100%;
-  }
-}
 
 @import "../src/styles/reset.sass";
+@import "../src/styles/settings.scss";
 @import "../src/styles/fonts.scss";
 @import "../src/styles/keyframes.scss";
 @import "../src/styles/header.scss";
@@ -24,5 +9,5 @@ body {
 @import "../src/styles/advantages.scss";
 @import "../src/styles/partners.scss";
 @import "../src/styles/contacts.scss";
+@import "../src/styles/modal.scss";
 @import "../src/styles/footer.scss";
-

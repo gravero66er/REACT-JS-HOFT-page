@@ -4,19 +4,65 @@
   display: flex;
   align-items: center;
   flex-flow: column nowrap;
+   @media (max-width: 1000px) {
+      padding: 0 0 30px; 
+    }
   &__list {
     display: grid;
+    width: 80%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 40px 10px;
+    grid-gap: 40px 20px;
     margin-bottom: 45px;
+    @media (max-width: 1000px) {
+      grid-template-columns: 1fr 1fr;
+    }
+     @media (max-width: 800px) {
+      grid-template-columns: 1fr;
+    }
   }
   &__item {
     align-self: center;
-    width: 210px;
-    height: 120px;
-  }
-  &__button {
     width: 100%;
+    height: 120px;
+     @media (max-width: 1000px) {
+      margin: 0 auto;
+      width: 60%;
+      height: 120px;
+    }
+    @media (max-width: 800px) {
+      margin: 0 auto;
+      width: 200px;
+      height: 120px;
+    }
+    &-1 {
+      background: url('../img/A.png') center/cover no-repeat;
+    }
+    &-2 {
+      background: url('../img/B.png') center/cover no-repeat;
+    }
+    &-3 {
+      background: url('../img/E.png') center/cover no-repeat;
+    }
+    &-4 {
+      background: url('../img/P.png') center/cover no-repeat;
+    }
+    &-5 {
+      background: url('../img/S.png') center/cover no-repeat;
+    }
+    &-6 {
+      background: url('../img/U.png') center/cover no-repeat;
+    }
+    &-7 {
+      background: url('../img/K.png') center/cover no-repeat;
+    }
+    &-8 {
+      background: url('../img/L.png') center/cover no-repeat;
+    }
+  }
+
+
+  &__button {
+    width: 300px;
     height: 70px;
     text-decoration: none;
     outline: none;
@@ -25,7 +71,7 @@
     color: #4086ba;
     border: 1px solid rgba(255, 255, 255, 0.4);
     background: none;
-    padding: 25px 30px;
+    padding: 20px 10px;
     font-family: "Open Sans", sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -33,6 +79,9 @@
     text-transform: uppercase;
     margin: 0 auto 15px;
     border-bottom: 1px solid #4086ba;
+     @media (max-width: 400px) {
+      font-size: 16px;
+    }
     &:before,
     &:after {
       content: "";
