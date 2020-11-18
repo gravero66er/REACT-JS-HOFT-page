@@ -66,12 +66,12 @@ export default function Contacts() {
               info@hoft.pro
             </a>
           </div>
-          <button
+          {/* <button
             className="about__button"
             onClick={() => setModalActive(true)}
           >
             Заказать звонок
-          </button>
+          </button> */}
         </div>
         <div className="contacts__content">
           <YMap />
