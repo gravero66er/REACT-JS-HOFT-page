@@ -4,7 +4,8 @@ import Advantages from "../../pages/advantages";
 import Contacts from "../../pages/contacts";
 import Partners from "../../pages/partners";
 import styled from "styled-components";
-import { NavLink, Switch, Route } from "react-router-dom";
+import { NavLink, Switch, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 const MenuBox = styled.div`
   @media (max-width: 861px) {
@@ -20,6 +21,7 @@ const MenuBox = styled.div`
 `;
 
 export default function Menu({ open }) {
+  const location = useLocation();
   return (
     <div>
       <MenuBox className="menu" open={open}>
@@ -36,17 +38,24 @@ export default function Menu({ open }) {
           КОНТАКТЫ
         </NavLink>
       </MenuBox>
-      <Switch>
-        <Route key={"/"} exact path="/" component={About} />
-        <Route
-          key={"/advantages"}
-          exact
-          path="/advantages"
-          component={Advantages}
-        />
-        <Route key={"/partner"} exact path="/partners" component={Partners} />
-        <Route key={"/contacts"} exact path="/contacts" component={Contacts} />
-      </Switch>
+      <AnimatePresence exitBeforeEnter>
+        <Switch location={location} key={location.pathname}>
+          <Route key={"/"} exact path="/" component={About} />
+          <Route
+            key={"/advantages"}
+            exact
+            path="/advantages"
+            component={Advantages}
+          />
+          <Route key={"/partner"} exact path="/partners" component={Partners} />
+          <Route
+            key={"/contacts"}
+            exact
+            path="/contacts"
+            component={Contacts}
+          />
+        </Switch>
+      </AnimatePresence>
     </div>
   );
 }

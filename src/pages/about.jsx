@@ -1,8 +1,31 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function About() {
+  const pageTransition = {
+    in: {
+      opacity: 1,
+      x: 0,
+    },
+    out: {
+      opacity: 0,
+      x: "+100%",
+    },
+  };
+
+  const pageDelay = {
+    duration: 0.5
+  }
+
   return (
-    <div className="page">
+    <motion.div
+      className="page"
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={pageTransition}
+      transition={pageDelay}
+    >
       <div className="about">
         <div className="about__title">
           Производим любые изделия из <span>PPSU</span>
@@ -19,6 +42,6 @@ export default function About() {
           <button className="about__button">Получить каталог</button>
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 }

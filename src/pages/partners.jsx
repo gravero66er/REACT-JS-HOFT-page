@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import Modal from "./modal";
 import emailjs from "emailjs-com";
+import { motion } from "framer-motion";
 
 export default function Partners() {
   const [modalActive, setModalActive] = useState(false);
   function sendEmail(e) {
     e.preventDefault();
-
     emailjs
       .sendForm(
         "service_5klt8gc",
@@ -24,8 +24,28 @@ export default function Partners() {
       );
     e.target.reset();
   }
+  const pageTransition = {
+    in: {
+      opacity: 1,
+      x: 0,
+    },
+    out: {
+      opacity: 0,
+      x: "+100%",
+    },
+  };
+  const pageDelay = {
+    duration: 0.5,
+  };
   return (
-    <div className="page">
+    <motion.div
+      className="page"
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={pageTransition}
+      transition={pageDelay}
+    >
       <div className="partners">
         <div className="partners__list">
           <div className="partners__item partners__item-1"></div>
@@ -73,6 +93,6 @@ export default function Partners() {
           </button>
         </form>
       </Modal>
-    </div>
+    </motion.div>
   );
 }
