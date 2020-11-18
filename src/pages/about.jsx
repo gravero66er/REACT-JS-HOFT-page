@@ -39,7 +39,7 @@ export default function About() {
           <div className="slider__item slider__item-5"></div>
         </div>
         <a href="https://yadi.sk/i/ZnwCg7t_pViVoA" target="_blank">
-          <button className="about__button">каталог</button>
+          <button className="about__button">скачать каталог</button>
         </a>
       </div>
     </motion.div>

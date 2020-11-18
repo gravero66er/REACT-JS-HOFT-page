@@ -29,7 +29,7 @@ export default function Footer() {
         Получить предложение
       </button>
 
-      <p>Получить персональное коммерческое предложение</p>
+      <p>Получить персональное коммерческое предложение!</p>
       <div className="footer__icons">
         <a
           href="https://vk.com/arcos_td"

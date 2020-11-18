@@ -29,5 +29,8 @@
     text-align: center;
     color: #9d9c9c;
     margin-bottom: 10px;
+    @media (max-width: 420px) {
+      font-size: 12px;
+    }
   }
 }
