@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import Modal from "../../pages/modal";
 import emailjs from "emailjs-com";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+toast.configure();
 
 export default function HeaderRow() {
   const [modalActive, setModalActive] = useState(false);
+
   function sendEmail(e) {
     e.preventDefault();
 
@@ -24,6 +29,13 @@ export default function HeaderRow() {
       );
     e.target.reset();
   }
+
+  const notify = () => {
+    toast.info("СООБЩЕНИЕ ОТПРАВЛЕНО!", {
+      position: toast.POSITION.TOP_CENTER,
+    });
+  };
+  
   return (
     <div>
       <div className="header__row">
@@ -64,7 +76,8 @@ export default function HeaderRow() {
             name="phone"
           />
           <br />
-          <button type="submit" className="about__button">
+          <br />
+          <button type="submit" className="about__button" onClick={notify}>
             Отправить
           </button>
         </form>
