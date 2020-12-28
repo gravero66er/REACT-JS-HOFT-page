@@ -36,9 +36,8 @@ export default function Contacts() {
             ул. Энегльса, 36, оф. 501/4
           </div>
           <div className="contacts__box">
-            <a href="tel:8343300490">
+            <a href="tel:88006006216">
               <div className="contacts__phone">8 (800) 600 62 16</div>
-              <div className="contacts__phone">8 (343) 300 49 01</div>
             </a>
             <a href="mailto:info@hoft.pro" className="contacts__email">
               info@hoft.pro

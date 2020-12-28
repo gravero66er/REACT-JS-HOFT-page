@@ -10,7 +10,7 @@
     & div {
       background-color: #4086ba;
       width: 2rem;
-      height: 0.10rem;
+      height: 0.1rem;
       transform-origin: 1px;
       transition: all 0.3s ease-in-out;
     }
@@ -38,10 +38,16 @@
       -webkit-animation-iteration-count: 1;
       animation-iteration-count: 1;
     }
+    @media (max-width: 425px) {
+      margin: 0 auto;
+    }
   }
   &__contacts {
     text-align: right;
     align-self: center;
+    @media (max-width: 425px) {
+      display: none;
+    }
   }
   &__phone {
     margin-bottom: 5px;
@@ -56,7 +62,22 @@
       margin-bottom: 3px;
     }
   }
-  &__row a {
+
+  &__icon_wrapper {
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+  }
+  &__icon {
+    background: url("../img/phone.png") center/cover no-repeat;
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease-out;
+    @media (min-width: 425px) {
+      display: none;
+    }
+  }
+  &__contacts a {
     position: relative;
     color: #4086ba !important;
     cursor: pointer;
@@ -94,63 +115,57 @@
     }
   }
   &__button {
-    width: 230px;
-    height: 70px;
     text-decoration: none;
+    background-color: #ffffff;
     outline: none;
+    color: #4086ba;
     display: inline-block;
     position: relative;
-    color: #4086ba;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    background: none;
+    padding: 15px 30px;
+    border: 1px solid;
+    border-image: linear-gradient(
+      180deg,
+      rgba(64, 134, 186, 1) 0%,
+      rgba(70, 157, 222, 1) 70%,
+      rgba(81, 172, 240, 1) 100%
+    );
+    border-image-slice: 1;
     font-family: "Open Sans", sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
     text-transform: uppercase;
-    margin: 0 auto;
-    border-bottom: 1px solid #4086ba;
+    overflow: hidden;
+    z-index: 5;
+    transition: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
     @media (max-width: 861px) {
       display: none;
     }
-    &:before,
-    &:after {
+    &:before {
       content: "";
       position: absolute;
-      width: 0;
-      height: 0;
-      opacity: 0;
-      box-sizing: border-box;
-    }
-    &:before {
-      bottom: 0;
       left: 0;
-      border-left: 1px solid #4086ba;
-      border-top: 1px solid #4086ba;
-      transition: 0s ease opacity 0.8s, 0.2s ease width 0.4s,
-        0.2s ease height 0.6s;
-    }
-    &:after {
       top: 0;
-      right: 0;
-      border-right: 1px solid #4086ba;
-      transition: 0s ease opacity 0.4s, 0.2s ease width, 0.2s ease height 0.2s;
-    }
-    &:hover:before,
-    &:hover:after {
-      height: 100%;
+      height: 0;
       width: 100%;
-      opacity: 1;
-    }
-    &:hover:before {
-      transition: 0s ease opacity 0s, 0.2s ease height, 0.2s ease width 0.2s;
-    }
-    &:hover:after {
-      transition: 0s ease opacity 0.4s, 0.2s ease height 0.4s,
-        0.2s ease width 0.6s;
+      z-index: -1;
+      color: white;
+      background: linear-gradient(
+        180deg,
+        rgba(64, 134, 186, 1) 0%,
+        rgba(70, 157, 222, 1) 70%,
+        rgba(81, 172, 240, 1) 100%
+      );
+      transition: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
     &:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0);
+      color: #ffffff;
+    }
+    &:hover:before {
+      bottom: 0%;
+      top: auto;
+      height: 100%;
     }
   }
 }

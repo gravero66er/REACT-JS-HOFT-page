@@ -35,7 +35,7 @@ export default function HeaderRow() {
       position: toast.POSITION.TOP_CENTER,
     });
   };
-  
+
   return (
     <div>
       <div className="header__row">
@@ -44,14 +44,19 @@ export default function HeaderRow() {
           Заказать звонок
         </button>
         <div className="header__contacts">
-          <a href="tel:88001876574">
+          <a href="tel:88006006216">
             <div className="header__phone">8 (800) 600 62 16</div>
           </a>
-          <a href="tel:8343300490">
+          <a href="tel:83433004901">
             <div className="header__phone">8 (343) 300 49 01</div>
           </a>
           <a href="mailto:info@hoft.pro" className="header__email">
             info@hoft.pro
+          </a>
+        </div>
+        <div className="header__icon_wrapper">
+          <a href="tel:88006006216">
+            <div className="header__icon"></div>
           </a>
         </div>
       </div>

@@ -29,7 +29,7 @@ export default function Menu({ open }) {
           HOFT
         </NavLink>
         <NavLink exact to="/advantages" className="menu__item">
-          ПРИЕМУЩЕСТВА
+          ПРЕИМУЩЕСТВА
         </NavLink>
         <NavLink exact to="/partners" className="menu__item">
           ПАРТНЕРЫ

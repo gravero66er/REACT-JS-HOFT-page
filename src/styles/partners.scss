@@ -6,13 +6,13 @@
   align-items: center;
   justify-content: center;
   flex-flow: column nowrap;
-   @media (max-width: 1000px) {
-      padding: 30px 0; 
-      height: 620px;
-    }
-    @media (max-width: 800px) {
-      height: 1250px;
-    }
+  @media (max-width: 1000px) {
+    padding: 30px 0;
+    height: 620px;
+  }
+  @media (max-width: 800px) {
+    height: 1250px;
+  }
 
   &__list {
     display: grid;
@@ -23,7 +23,7 @@
     @media (max-width: 1000px) {
       grid-template-columns: 1fr 1fr;
     }
-     @media (max-width: 800px) {
+    @media (max-width: 800px) {
       grid-template-columns: 1fr;
     }
   }
@@ -31,7 +31,7 @@
     align-self: center;
     width: 100%;
     height: 120px;
-     @media (max-width: 1000px) {
+    @media (max-width: 1000px) {
       margin: 0 auto;
       width: 60%;
       height: 120px;
@@ -42,91 +42,83 @@
       height: 120px;
     }
     &-1 {
-      background: url('../img/A.png') center/cover no-repeat;
+      background: url("../img/A.png") center/cover no-repeat;
     }
     &-2 {
-      background: url('../img/B.png') center/cover no-repeat;
+      background: url("../img/B.png") center/cover no-repeat;
     }
     &-3 {
-      background: url('../img/E.png') center/cover no-repeat;
+      background: url("../img/E.png") center/cover no-repeat;
     }
     &-4 {
-      background: url('../img/P.png') center/cover no-repeat;
+      background: url("../img/P.png") center/cover no-repeat;
     }
     &-5 {
-      background: url('../img/S.png') center/cover no-repeat;
+      background: url("../img/S.png") center/cover no-repeat;
     }
     &-6 {
-      background: url('../img/U.png') center/cover no-repeat;
+      background: url("../img/U.png") center/cover no-repeat;
     }
     &-7 {
-      background: url('../img/K.png') center/cover no-repeat;
+      background: url("../img/K.png") center/cover no-repeat;
     }
     &-8 {
-      background: url('../img/L.png') center/cover no-repeat;
+      background: url("../img/L.png") center/cover no-repeat;
     }
   }
 
-
   &__button {
-    width: 310px;
-    height: 70px;
     text-decoration: none;
+    background-color: #ffffff;
     outline: none;
+    color: #4086ba;
     display: inline-block;
     position: relative;
-    color: #4086ba;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    background: none;
-    padding: 20px 10px;
+    padding: 15px 30px;
+    border: 1px solid;
+    border-image: linear-gradient(
+      180deg,
+      rgba(64, 134, 186, 1) 0%,
+      rgba(70, 157, 222, 1) 70%,
+      rgba(81, 172, 240, 1) 100%
+    );
+    border-image-slice: 1;
     font-family: "Open Sans", sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
     text-transform: uppercase;
-    margin: 0 auto 15px;
-    border-bottom: 1px solid #4086ba;
-     @media (max-width: 400px) {
+    overflow: hidden;
+    z-index: 5;
+    transition: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    @media (max-width: 861px) {
       font-size: 16px;
     }
-    &:before,
-    &:after {
+    &:before {
       content: "";
       position: absolute;
-      width: 0;
-      height: 0;
-      opacity: 0;
-      box-sizing: border-box;
-    }
-    &:before {
-      bottom: 0;
       left: 0;
-      border-left: 1px solid #4086ba;
-      border-top: 1px solid #4086ba;
-      transition: 0s ease opacity 0.8s, 0.2s ease width 0.4s,
-        0.2s ease height 0.6s;
-    }
-    &:after {
       top: 0;
-      right: 0;
-      border-right: 1px solid #4086ba;
-      transition: 0s ease opacity 0.4s, 0.2s ease width, 0.2s ease height 0.2s;
-    }
-    &:hover:before,
-    &:hover:after {
-      height: 100%;
+      height: 0;
       width: 100%;
-      opacity: 1;
-    }
-    &:hover:before {
-      transition: 0s ease opacity 0s, 0.2s ease height, 0.2s ease width 0.2s;
-    }
-    &:hover:after {
-      transition: 0s ease opacity 0.4s, 0.2s ease height 0.4s,
-        0.2s ease width 0.6s;
+      z-index: -1;
+      color: white;
+      background: linear-gradient(
+        180deg,
+        rgba(64, 134, 186, 1) 0%,
+        rgba(70, 157, 222, 1) 70%,
+        rgba(81, 172, 240, 1) 100%
+      );
+      transition: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
     &:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0);
+      color: #ffffff;
+    }
+    &:hover:before {
+      bottom: 0%;
+      top: auto;
+      height: 100%;
     }
   }
 }
